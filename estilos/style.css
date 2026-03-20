@@ -1,17 +1,102 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-}
-
 body {
-    background-color:rgb(81, 211, 81);
-
+    display: flex;           /* Ativa o Flexbox para alinhar o conteúdo principal */
+    flex-direction: column;  /* CORRIGIDO: Coloca os artigos um embaixo do outro */
+    align-items: center;     /* Centraliza todos os artigos na tela */
+    min-height: 100vh;       /* Ocupa a altura total da janela */
+    margin: 0;
+    gap: 30px;               /* Espaçamento uniforme entre os artigos */
+    
+    /* MELHORIA: Fundo cinza bem suave e sofisticado */
+    background-color: #292929; 
+    font-family: sans-serif;
 }
 
+/* --- ALINHAMENTO DAS IMAGENS LATERAIS --- */
+
+.lado {
+    float: left;             /* Faz o texto "fluir" ao redor da imagem */
+    width: 150px;            /* Define um tamanho fixo e controlado */
+    height: auto;            /* Mantém a proporção original */
+    margin-right: 20px;      /* Espaço entre a imagem e o texto que a contorna */
+    margin-bottom: 10px;     /* Espaço abaixo da imagem */
+    border-radius: 8px;      /* Bordas suaves */
+}
+
+/* Exceção para a imagem que você chamou de "maior" no HTML */
+.lado.maior {
+    width: 220px;            /* Um pouco maior que as outras */
+}
+
+iframe {
+    max-width: 100%; /* O vídeo nunca será maior que a tela do celular */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Uma sombra suave para dar profundidade */
+    text-align: center;
+}
+
+/* 1. O Container Principal (O "Cartão") */
+article {
+    background-color: rgb(57, 207, 125);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05); /* Sombra bem suave */
+    max-width: 600px; /* Limita a largura para a leitura não cansar os olhos */
+    width: 90%; /* Garante que caiba na tela do celular */
+}
+
+/* 2. O Título dentro do artigo */
+article h2 {
+    color: #3a3a3a; /* Um tom de azul bem escuro, mais sofisticado que o preto puro */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* 3. Os Parágrafos dentro do artigo */
+article p {
+    color: #3a3a3a; /* Cinza escuro para contraste confortável */
+    line-height: 1.6; /* O grande segredo: aumenta o espaço entre as linhas! */
+    margin-bottom: 15px;
+    text-align: justify; /* Alinha o texto nos dois lados, como em um livro */
+}
+
+/* Organiza o conteúdo principal no centro da tela */
 main {
-    background-color: white;
-    width: 400px;
-    margin: auto;
-    padding: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.486);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Centraliza os textos do cabeçalho */
+header {
+    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Deixa o seu nome maior e mais sofisticado */
+header h1 {
+    color: rgb(57, 207, 125);
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
+}
+
+/* Transforma a foto de perfil em um círculo elegante */
+header img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* O grande truque para fotos redondas! */
+    object-fit: cover;  /* Evita que a foto fique esticada ou esmagada */
+    border: 4px solid rgb(57, 207, 125); /* Uma borda roxa para destacar */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.voltar {
+    float: left;             /* Faz o texto "fluir" ao redor da imagem */
+    width: 85px;            /* Define um tamanho fixo e controlado */
+    height: auto;            /* Mantém a proporção original */
+    margin-right: 20px;      /* Espaço entre a imagem e o texto que a contorna */
+    margin-bottom: 10px;     /* Espaço abaixo da imagem */
+    border-radius: 50%;     /* O grande truque para fotos redondas! */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
